@@ -1,0 +1,12 @@
+<?php
+    if($_GET['id_user']){
+        include "../../koneksi.php";
+            $conn=mysqli_connect('localhost','root','','laundry');
+            $qry_hapus=mysqli_query($conn,"DELETE FROM user WHERE id_user = '".$_GET['id_user']."'");
+          if($qry_hapus) {
+                echo "<script>alert ('Sukses hapus user');location.href='user.php';</script>";
+        } else {
+                echo "<script>alert ('Gagal hapus user');location.href='user.php';</script>";
+        }
+    }
+?>
